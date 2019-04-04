@@ -17,7 +17,7 @@ def plotting(FFT_OG, FFT_filtered):
     plt.show()
 
 def processFile(fn, offset):
-    data, sampleRate = sf.read('P_9_2.wav')
+    data, sampleRate = sf.read(fn)
     FFT = np.fft.fft(data)
     index = int(len(FFT) / 2 - 1)
     for x in range(index - offset - 1, index + offset):
